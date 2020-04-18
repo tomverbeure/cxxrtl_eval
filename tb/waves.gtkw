@@ -1,0 +1,36 @@
+[*]
+[*] GTKWave Analyzer v3.3.90 (w)1999-2018 BSI
+[*] Sat Apr 18 22:40:31 2020
+[*]
+[dumpfile] "/home/tom/projects/cpu_skeleton/tb/waves.vcd"
+[dumpfile_mtime] "Sat Apr 18 22:38:13 2020"
+[dumpfile_size] 200237530
+[savefile] "/home/tom/projects/cpu_skeleton/tb/waves.gtkw"
+[timestart] 0
+[size] 2973 1602
+[pos] -1 -1
+*-28.000000 15740000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb.
+[treeopen] tb.u_dut.
+[treeopen] tb.u_dut.cpu_u_cpu.
+[treeopen] tb.u_dut.cpu_u_cpu.u_cpu.
+[treeopen] tb.u_dut.cpu_u_cpu.u_cpu.cpu.
+[treeopen] tb.u_dut.cpu_u_cpu.u_uart.
+[treeopen] tb.u_dut.cpu_u_cpu.u_uart.uartCtrl_1_.
+[sst_width] 509
+[signals_width] 630
+[sst_expanded] 1
+[sst_vpaned_height] 931
+@200
+-
+@28
+tb.u_dut.led_red
+tb.u_dut.led_green
+tb.u_dut.led_blue
+@201
+-
+@28
+tb.u_dut.uart_rxd
+tb.u_dut.uart_txd
+[pattern_trace] 1
+[pattern_trace] 0
