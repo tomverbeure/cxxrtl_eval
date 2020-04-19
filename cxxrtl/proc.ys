@@ -1,0 +1,5 @@
+read_verilog ../spinal/ExampleTop.sim.v
+hierarchy -check -top ExampleTop
+write_ilang ExampleTop.sim.ilang
+write_cxxrtl ExampleTop.sim.cpp
+
