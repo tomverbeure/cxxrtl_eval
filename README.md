@@ -21,6 +21,8 @@ It's going to be fun to play with this.
 
 ## Prepare Verilog
 
+(This is optional: the generated Verilog and .bin files are part of the repo.)
+
 ```
 cd sw
 make
