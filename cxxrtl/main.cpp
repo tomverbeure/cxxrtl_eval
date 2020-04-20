@@ -1,7 +1,7 @@
 
 #include <iostream>
 
-#include "ExampleTop.sim.cpp"
+#include EXAMPLE_TOP
 
 using namespace std;
 
