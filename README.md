@@ -4,7 +4,7 @@
 This project compares the simulation speed of the following open source simulators:
 
 * Icarus Verilog (11.0)
-* Verilator (rev 3.923)
+* Verilator (rev 4.033)
 * Yosys CXXRTL
 
 The CXXRTL simulation backend is absolutely bleeding edge: it was merged in the the Yosys master on April 10th,
@@ -14,7 +14,7 @@ those 9 days.
 There's also no standard Yosys recipe yet for best results: I just played around to come up with what ran fastest
 on my test design, which is a VexRiscv CPU with some RAM and some LEDs that are toggling.
 
-Still, the simulation time is only 2.4x the simulation time of a single threaded Verilator simulation, which has
+Still, the simulation time is around 5x the simulation time of a single threaded Verilator simulation, which has
 seen 20 years of optimizations.
 
 It's going to be fun to play with this.
@@ -52,9 +52,9 @@ time ./tb
 
 Result:
 ```
-real	0m0.027s
-user	0m0.024s
-sys	0m0.004s
+real	0m0.013s
+user	0m0.013s
+sys	0m0.000s
 ```
 
 ## CXXRTL
