@@ -1,7 +1,7 @@
 
 # Yosys CXXRTL simulation backend (Yosim?) Benchmark
 
-This project compares the simulation speed of the following open source simulations:
+This project compares the simulation speed of the following open source simulators:
 
 * Icarus Verilog (11.0)
 * Verilator (rev 3.923)
@@ -57,11 +57,18 @@ user	0m0.024s
 sys	0m0.004s
 ```
 
-## cxxrtl
+## CXXRTL
 ```
 cd cxxrtl
 ./run.sh
 time ./example
+```
+
+Result:
+```
+real	0m0.063s
+user	0m0.059s
+sys	0m0.004s
 ```
 
 At the time of writing this, the cxxrtl recipe was as follows:
@@ -75,11 +82,5 @@ write_ilang ExampleTop.sim.ilang
 write_cxxrtl ExampleTop.sim.cpp
 ```
 
-Result:
-```
-real	0m0.063s
-user	0m0.059s
-sys	0m0.004s
-```
 
 
