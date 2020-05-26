@@ -1,4 +1,6 @@
 
+**NOTE: These results are no more representative. A number of optimizations have been made since I ran the benchmark.**
+
 # Yosys CXXRTL simulation backend (Yosim?) Benchmark
 
 This project compares the simulation speed of the following open source simulators:
