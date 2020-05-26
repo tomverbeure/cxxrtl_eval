@@ -1,5 +1,5 @@
 
-**NOTE: These results are no more representative. A number of optimizations have been made since I ran the benchmar.**
+**NOTE: These results are no more representative. A number of optimizations have been made since I ran the benchmark.**
 
 # Yosys CXXRTL simulation backend (Yosim?) Benchmark
 
