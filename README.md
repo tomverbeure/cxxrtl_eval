@@ -1,5 +1,5 @@
 
-**NOTE: These results are under review. Treat with care!**
+**NOTE: These results are still very much in flux as CXXRTL is under heavy development!**
 
 # Yosys CXXRTL simulation backend (Yosim?) Benchmark
 
@@ -57,7 +57,7 @@ user	0m0.527s
 sys	0m0.024s
 ```
 
-## CXXRTL
+## CXXRTL (no optimization passes)
 ```
 cd cxxrtl
 ln -s `which yosys` yosys
@@ -72,10 +72,20 @@ user	0m5.290s
 sys	0m0.025s
 ```
 
-At the time of writing this, the cxxrtl recipe was as follows:
+## CXXRTL (optimization passes)
+
+Result:
+```
+real	0m2.847s
+user	0m2.831s
+sys	0m0.016s
+```
+
+At the time of writing this, the cxxrtl optimization recipe was as follows:
 ```
 read_verilog ../spinal/ExampleTop.sim.v
 hierarchy -check -top ExampleTop
+proc; flatten; clean; splitnets -driver; clean -purge
 write_ilang ExampleTop.sim.ilang
 write_cxxrtl ExampleTop.sim.cpp
 ```
