@@ -12,10 +12,10 @@ int main()
     int prev_led_red, prev_led_green, prev_led_blue;
 
     top.step();
-    for(int i=0;i<10000;++i){
-        top.p_osc__clk__in.next = value<1>{0u};
+    for(int i=0;i<1000000;++i){
+        top.p_osc__clk__in = value<1>{0u};
         top.step();
-        top.p_osc__clk__in.next = value<1>{1u};
+        top.p_osc__clk__in = value<1>{1u};
         top.step();
 
         int cur_led_red = top.p_led__red.curr.data[0];

@@ -61,7 +61,7 @@ int main()
     csr_set(mie, MIE_MEIE);
 
     REG_WR(LED_DIR, 0xff);
-    for(int i=0;i<10;++i){
+    for(int i=0;i<10000;++i){
         REG_WR(LED_WRITE, 0x01);
         wait_cycles(100);
         REG_WR(LED_WRITE, 0x02);

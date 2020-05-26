@@ -1,7 +1,8 @@
 
-CREATE_MIF = ../misc/create_mif.rb
-HEX2BIN    = ../misc/hex2bin.py
-SW_DIR	   = ../sw
+CREATE_MIF 		= ../misc/create_mif.rb
+HEX2BIN    		= ../misc/hex2bin.py
+SW_DIR	   		= ../sw
+VERILOG_FILES 	= tb.v ../spinal/ExampleTop.sim.v
 
 ROM_FILES = ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol0.bin \
 		    ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol1.bin \
@@ -11,8 +12,8 @@ ROM_FILES = ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol0.bin \
 all: tb $(ROM_FILES)
 	./tb
 
-tb: tb.v ../spinal/ExampleTop.sim.v 
-	iverilog -o $@ $^
+tb: $(VERILOG_FILES) $(ROM_FILES)
+	iverilog -o $@ $(VERILOG_FILES)
 
 ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol0.bin: ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol0.hex
 	$(HEX2BIN) < $< > $@

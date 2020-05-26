@@ -20,7 +20,7 @@ module tb;
 
         osc_reset_ = 0;
 
-        repeat(10000)
+        repeat(100000)
             @(posedge osc_clk);
 
         $finish;

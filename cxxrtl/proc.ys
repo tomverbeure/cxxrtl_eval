@@ -1,8 +1,9 @@
 read_verilog ../spinal/ExampleTop.sim.v
 hierarchy -check -top ExampleTop
-proc
-flatten
-opt
+#prep -flatten
+#proc
+#flatten
+#opt
 write_ilang ExampleTop.sim.ilang
-write_cxxrtl ExampleTop.sim.cpp
+write_cxxrtl -O5 ExampleTop.sim.cpp
 
