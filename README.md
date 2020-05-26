@@ -5,19 +5,14 @@ This project compares the simulation speed of the following open source simulato
 
 * Icarus Verilog (11.0)
 * Verilator (rev 4.033)
-* Yosys CXXRTL
+* Yosys CXXRTL (b651352, 20200526)
 
-The CXXRTL simulation backend is absolutely bleeding edge: it was merged in the the Yosys master on April 10th,
-just 9 days after runnings these first test, and a bunch of bug fixes and additional features were added during
-those 9 days. 
+I don't use any optimization settings for Yosys. It uses to be that CXXRTL performed often significantly better
+after all kinds of optimization, but that doesn't seem to be the case anymore.
 
-There's also no standard Yosys recipe yet for best results: I just played around to come up with what ran fastest
-on my test design, which is a VexRiscv CPU with some RAM and some LEDs that are toggling.
+The test design is a VexRiscv CPU with some RAM and some LEDs that are toggling.
 
-Still, the simulation time is around 5x the simulation time of a single threaded Verilator simulation, which has
-seen 20 years of optimizations.
-
-It's going to be fun to play with this.
+I run the simulation for 1M clock cycles, except on Icarus Verilog where I only do 100K. It's just too slow...
 
 ## Prepare Verilog
 
@@ -31,6 +26,7 @@ make sim
 ```
 
 ## Icarus Verilog
+
 ```
 cd tb
 make tb
@@ -40,46 +36,44 @@ time ./tb
 Result:
 ```
 ...
-real	0m2.706s
-user	0m2.695s
-sys	0m0.008s
+real	0m26.389s
+user	0m26.313s
+sys	0m0.061s
 ```
 
 ## Verilator
 ```
 cd verilator
-./run.sh
+./build.sh
 time ./tb
 ```
 
 Result:
 ```
-real	0m0.013s
-user	0m0.013s
-sys	0m0.000s
+real	0m0.551s
+user	0m0.527s
+sys	0m0.024s
 ```
 
 ## CXXRTL
 ```
 cd cxxrtl
-./run.sh
+ln -s `which yosys` yosys
+./build.sh
 time ./example
 ```
 
 Result:
 ```
-real	0m0.063s
-user	0m0.059s
-sys	0m0.004s
+real	0m5.314s
+user	0m5.290s
+sys	0m0.025s
 ```
 
 At the time of writing this, the cxxrtl recipe was as follows:
 ```
 read_verilog ../spinal/ExampleTop.sim.v
 hierarchy -check -top ExampleTop
-proc
-flatten
-opt
 write_ilang ExampleTop.sim.ilang
 write_cxxrtl ExampleTop.sim.cpp
 ```

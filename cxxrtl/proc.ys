@@ -5,5 +5,5 @@ hierarchy -check -top ExampleTop
 #flatten
 #opt
 write_ilang ExampleTop.sim.ilang
-write_cxxrtl -O5 ExampleTop.sim.cpp
+write_cxxrtl ExampleTop.sim.cpp
 
