@@ -1,0 +1,7 @@
+*.bin
+obj_dir*
+tb
+tb_vcd
+tb_fst
+waves.vcd*
+waves.fst
