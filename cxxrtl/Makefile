@@ -8,58 +8,93 @@ MEM_FILES	= ../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol0.bin 
 				../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol2.bin 		\
 				../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol3.bin
 
-all: example_O5_clang example_O4_clang example_O3_clang example_O2_clang example_O1_clang example_O0_clang example_O5_clang_db
-	time ./example_O0_clang
-	time ./example_O1_clang
-	time ./example_O2_clang
-	time ./example_O3_clang
-	time ./example_O4_clang
-	time ./example_O5_clang
+CLANG6			= clang++-6.0
+CLANG9			= clang++-9
+GCC7			= g++
+GCC10			= g++-10
 
-example_O5_clang_db: ExampleTop.sim.O5.cpp $(SRC)
-	clang++ -g -O0 -std=c++11 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@
+CLANG_INLINE	= -mllvm -inline-threshold=10000 
 
-example_O5_clang: ExampleTop.sim.O5.cpp $(SRC)
-	clang++ -g -O3 -std=c++11 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@
+YOSYS_PREPROC = "read_verilog $(VERILOG); hierarchy -check -top ExampleTop"
+YOSYS_RECIPE  = "proc; flatten; clean; splitnets -driver; clean -purge"
 
-example_O4_clang: ExampleTop.sim.O4.cpp $(SRC)
-	clang++ -g -O3 -std=c++11 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@
+all: compile
 
-example_O3_clang: ExampleTop.sim.O3.cpp $(SRC)
-	clang++ -g -O3 -std=c++11 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@
+.PHONY: compile
+compile: \
+	compile_time.txt \
+	example_default_clang9 \
+	example_Og_clang9 \
+	example_default_clang6 \
+	example_default_gcc10 \
+	example_default_gcc7 \
+	example_default_clang6_inline \
+	example_default_clang9_inline \
+	example_Og_clang9_inline
 
-example_O2_clang: ExampleTop.sim.O2.cpp $(SRC)
-	clang++ -g -O3 -std=c++11 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@
+.PHONY: compile_time.txt
+compile_time.txt:
+	rm -f $@
+	touch $@
 
-example_O1_clang: ExampleTop.sim.O1.cpp $(SRC)
-	clang++ -g -O3 -std=c++11 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@
+example_default_clang9: ExampleTop.sim.default.cpp $(SRC)
+	echo >> compile_time.txt
+	echo "Compile time $@" >> compile_time.txt
+	(time $(CLANG9) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	echo >> compile_time.txt
 
-example_O0_clang: ExampleTop.sim.O0.cpp $(SRC)
-	clang++ -g -O3 -std=c++11 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@
+example_default_clang6: ExampleTop.sim.default.cpp $(SRC)
+	echo >> compile_time.txt
+	echo "Compile time $@" >> compile_time.txt
+	(time $(CLANG6) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	echo >> compile_time.txt
 
-ExampleTop.sim.O5.cpp:
+example_default_clang9_inline: ExampleTop.sim.default.cpp $(SRC)
+	echo >> compile_time.txt
+	echo "Compile time $@" >> compile_time.txt
+	(time $(CLANG9) -g -O3 $(CLANG_INLINE) -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	echo >> compile_time.txt
+
+example_default_clang6_inline: ExampleTop.sim.default.cpp $(SRC)
+	echo >> compile_time.txt
+	echo "Compile time $@" >> compile_time.txt
+	(time $(CLANG6) -g -O3 $(CLANG_INLINE) -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	echo >> compile_time.txt
+
+example_Og_clang9: ExampleTop.sim.Og.cpp $(SRC)
+	echo >> compile_time.txt
+	echo "Compile time $@" >> compile_time.txt
+	(time $(CLANG9) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	echo >> compile_time.txt
+
+example_Og_clang9_inline: ExampleTop.sim.Og.cpp $(SRC)
+	echo >> compile_time.txt
+	echo "Compile time $@" >> compile_time.txt
+	(time $(CLANG9) -g -O3 $(CLANG_INLINE) -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	echo >> compile_time.txt
+
+example_default_gcc10: ExampleTop.sim.default.cpp $(SRC)
+	echo >> compile_time.txt
+	echo "Compile time $@" >> compile_time.txt
+	(time $(GCC10) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	echo >> compile_time.txt
+
+example_default_gcc7: ExampleTop.sim.default.cpp $(SRC)
+	echo >> compile_time.txt
+	echo "Compile time $@" >> compile_time.txt
+	(time $(GCC7) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	echo >> compile_time.txt
+
+
+.PHONY: ExampleTop.sim.default.cpp
+ExampleTop.sim.default.cpp:
 	cp $(MEM_FILES) .
-	$(YOSYS)  -p "read_verilog $(VERILOG); write_cxxrtl -O5 $@"
+	$(YOSYS) -p $(YOSYS_PREPROC) -p $(YOSYS_RECIPE) -p "write_cxxrtl $@"
 
-ExampleTop.sim.O4.cpp:
+.PHONY: ExampleTop.sim.Og.cpp
+ExampleTop.sim.Og.cpp:
 	cp $(MEM_FILES) .
-	$(YOSYS)  -p "read_verilog $(VERILOG); write_cxxrtl -O4 $@"
-
-ExampleTop.sim.O3.cpp:
-	cp $(MEM_FILES) .
-	$(YOSYS)  -p "read_verilog $(VERILOG); write_cxxrtl -O3 $@"
-
-ExampleTop.sim.O2.cpp:
-	cp $(MEM_FILES) .
-	$(YOSYS)  -p "read_verilog $(VERILOG); write_cxxrtl -O2 $@"
-
-ExampleTop.sim.O1.cpp:
-	cp $(MEM_FILES) .
-	$(YOSYS)  -p "read_verilog $(VERILOG); write_cxxrtl -O1 $@"
-
-ExampleTop.sim.O0.cpp:
-	cp $(MEM_FILES) .
-	$(YOSYS)  -p "read_verilog $(VERILOG); write_cxxrtl -O0 $@"
+	$(YOSYS) -p $(YOSYS_PREPROC) -p $(YOSYS_RECIPE) -p "write_cxxrtl -Og $@"
 
 clean: 
-	\rm -fr *.bin *.sim.* example_*_clang example_*_gcc example
+	\rm -fr *.bin *.txt *.sim.* example_*_clang* example_*_gcc* example

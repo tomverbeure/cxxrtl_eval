@@ -1,0 +1,9 @@
+*.bin
+ExampleTop.*.cpp
+*.txt
+example
+example*clang*
+example*gcc*
+*.ilang
+yosys
+t
