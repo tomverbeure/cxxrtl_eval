@@ -26,7 +26,7 @@ int main()
     // We don't necessarily have to load all debug objects to the VCD. There is, for example,
     // an vcd.add(<debug items>, <filter>)) method which allows creating your custom filter to decide
     // what to add and what not. 
-    vcd.add(all_debug_items);
+    vcd.add_without_memories(all_debug_items);
 
     std::ofstream waves("waves.vcd");
 
@@ -56,11 +56,9 @@ int main()
             cout << "cycle " << steps << " - led: " << cur_led << endl;
 
         prev_led = cur_led;
+
+        waves << vcd.buffer;
+        vcd.buffer.clear();
     }
-
-    // The VCD data gets stored in a string inside the vcd_writer.
-    // Dump it all out to a file...
-    waves << vcd.buffer;
-
 }
 
