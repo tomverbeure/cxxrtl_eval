@@ -82,7 +82,7 @@ user	0m3.382s
 sys	0m2.403s
 ```
 
-#  CXXRTL - Max Opt
+##  CXXRTL - Max Opt
 
 ```
 CXXRTL - Max Opt - No Waves
