@@ -10,15 +10,17 @@ using std::setw;
 
 int main()
 {
-    cxxrtl_design::p_blink top;
+    cxxrtl_design::p_top top;
 
     cxxrtl::debug_items all_debug_items;
 
     top.debug_info(all_debug_items);
 
     // Print all the introspectable information of all debug items
-    for(auto &it : all_debug_items)
-        cout << setw(10) << it.first << " : type = " << it.second.type << " : width = " << setw(4) << it.second.width << " : depth = " << setw(6) << it.second.depth << endl;
+    for(auto &it : all_debug_items.table)
+        for(auto &part: it.second)
+            cout << setw(20) << it.first << " : type = " << part.type << " : width = " << setw(4) << part.width << " : depth = " << setw(6) << part.depth 
+                 << setw(4)  << " : lsb_at = " << part.lsb_at << " : zero_at = " << part.zero_at << endl;
 
     int prev_led = 0;
 
@@ -32,7 +34,7 @@ int main()
         top.p_clk = value<1>{1u};
         top.step();
 
-        int cur_led = top.p_led.curr.data[0];
+        int cur_led = top.p_led.data[0];
 
         if (cur_led != prev_led)
             cout << "cycle " << steps << " - led: " << cur_led << endl;
