@@ -7,14 +7,17 @@ This project compares the simulation speed of the following open source simulato
 
 * Icarus Verilog (11.0)
 * Verilator (rev 4.033)
-* Yosys CXXRTL (b651352, 20200526)
-
-I don't use any optimization settings for Yosys. It uses to be that CXXRTL performed often significantly better
-after all kinds of optimization, but that doesn't seem to be the case anymore.
+* Yosys CXXRTL (version listed with results.)
 
 The test design is a VexRiscv CPU with some RAM and some LEDs that are toggling.
 
 I run the simulation for 1M clock cycles, except on Icarus Verilog where I only do 100K. It's just too slow...
+
+I use the following Yosys optimization recipe: 
+
+```
+YOSYS_RECIPE  = "proc; flatten; clean; splitnets -driver; clean -purge"
+```
 
 ## Prepare Verilog
 
@@ -246,7 +249,17 @@ write_ilang ExampleTop.sim.ilang
 write_cxxrtl ExampleTop.sim.cpp
 ```
 
-## Compile Time
+# Verilator Compile Time
+
+real	0m3.671s
+user	0m3.221s
+sys	0m0.138s
+
+
+## CXXRTL Compile Time
+
+clang9 not only gives the best simulation results, but it also compiles
+must faster than anything else.
 
 ```
 Compile time example_default_clang9
