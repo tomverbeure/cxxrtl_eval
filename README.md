@@ -244,10 +244,11 @@ write_cxxrtl ExampleTop.sim.cpp
 
 # Verilator Compile Time
 
+```
 real	0m3.671s
 user	0m3.221s
 sys	0m0.138s
-
+```
 
 ## CXXRTL Compile Time
 
