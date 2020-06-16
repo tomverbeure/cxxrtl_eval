@@ -27,10 +27,10 @@ compile: \
 	example_Og_clang9 \
 	example_default_clang6 \
 	example_default_gcc10 \
-	example_default_gcc7 \
-	example_default_clang6_inline \
-	example_default_clang9_inline \
-	example_Og_clang9_inline
+	example_default_gcc7
+#	example_default_clang6_inline \
+#	example_default_clang9_inline \
+#	example_Og_clang9_inline
 
 .PHONY: compile_time.txt
 compile_time.txt:
@@ -94,7 +94,7 @@ ExampleTop.sim.default.cpp:
 .PHONY: ExampleTop.sim.Og.cpp
 ExampleTop.sim.Og.cpp:
 	cp $(MEM_FILES) .
-	$(YOSYS) -p $(YOSYS_PREPROC) -p $(YOSYS_RECIPE) -p "write_cxxrtl -Og $@"
+	$(YOSYS) -p $(YOSYS_PREPROC) -p "write_cxxrtl -Og $@"
 
 clean: 
-	\rm -fr *.bin *.txt *.sim.* example_*_clang* example_*_gcc* example
+	\rm -fr *.bin *.txt *.sim.* example_*_clang* example_*_gcc* example *.vcd

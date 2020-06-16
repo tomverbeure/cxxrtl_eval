@@ -48,12 +48,12 @@ Verilator 4.033 devel rev v4.032-73-gdef40fa
 
 
 real	0m0.456s
+user	0m0.452s
+sys	0m0.004s
+
+real	0m0.456s
 user	0m0.456s
 sys	0m0.000s
-
-real	0m0.455s
-user	0m0.451s
-sys	0m0.004s
 
 real	0m0.456s
 user	0m0.456s
@@ -63,174 +63,173 @@ Verilator - VCD
 Verilator 4.033 devel rev v4.032-73-gdef40fa
 
 
-real	0m7.059s
-user	0m3.452s
-sys	0m2.016s
+real	0m9.381s
+user	0m3.371s
+sys	0m2.406s
 
-real	0m7.369s
-user	0m3.393s
-sys	0m2.364s
+real	0m7.503s
+user	0m3.484s
+sys	0m2.447s
 
-real	0m7.074s
-user	0m3.511s
-sys	0m2.242s
+real	0m7.078s
+user	0m3.421s
+sys	0m2.521s
 ```
 
 ##  CXXRTL - Max Opt
 
 ```
 CXXRTL - Max Opt - No Waves
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m1.117s
-user	0m1.113s
+real	0m1.473s
+user	0m1.472s
+sys	0m0.000s
+
+real	0m1.470s
+user	0m1.469s
+sys	0m0.000s
+
+real	0m1.472s
+user	0m1.467s
 sys	0m0.004s
 
-real	0m1.116s
-user	0m1.116s
-sys	0m0.000s
-
-real	0m1.113s
-user	0m1.113s
-sys	0m0.000s
-
 CXXRTL - Max Opt - VCD full (incl Mem)
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	1m30.976s
-user	1m29.215s
-sys	0m1.148s
+real	1m34.634s
+user	1m32.743s
+sys	0m1.759s
 
 CXXRTL - Max Opt - VCD full (no Mem)
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m6.772s
-user	0m5.732s
-sys	0m0.767s
+real	0m9.158s
+user	0m7.337s
+sys	0m1.170s
 
 CXXRTL - Max Opt - VCD regs only
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m7.341s
-user	0m5.551s
-sys	0m0.839s
-```
-
+real	0m8.517s
+user	0m6.740s
+sys	0m1.146s
 ## CXXRTL - Max Debug
 
 ```
 CXXRTL - Max Debug - No Waves
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m1.636s
-user	0m1.608s
+real	0m2.474s
+user	0m2.384s
+sys	0m0.008s
+
+real	0m2.382s
+user	0m2.381s
 sys	0m0.000s
 
-real	0m1.601s
-user	0m1.597s
-sys	0m0.004s
-
-real	0m1.601s
-user	0m1.589s
-sys	0m0.012s
+real	0m2.373s
+user	0m2.371s
+sys	0m0.000s
 
 CXXRTL - Max Debug - VCD full (incl Mem)
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	1m45.124s
-user	1m40.406s
-sys	0m3.476s
+real	2m3.533s
+user	1m58.238s
+sys	0m4.685s
 
 CXXRTL - Max Debug - VCD full (no Mem)
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m18.731s
-user	0m15.848s
-sys	0m2.090s
+real	0m39.661s
+user	0m33.152s
+sys	0m5.129s
 
 CXXRTL - Max Debug - VCD regs only
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m8.480s
-user	0m6.409s
-sys	0m0.734s
+real	0m10.470s
+user	0m7.970s
+sys	0m1.659s
 ```
 
 ## CXXRTL - Compiler Versions
 
 ```
 CXXRTL - Max Opt - clang9
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m1.119s
-user	0m1.119s
+real	0m1.488s
+user	0m1.474s
+sys	0m0.012s
+
+real	0m1.473s
+user	0m1.472s
 sys	0m0.000s
 
-real	0m1.116s
-user	0m1.116s
-sys	0m0.000s
-
-real	0m1.114s
-user	0m1.114s
-sys	0m0.000s
-
-CXXRTL - Max Opt - clang6
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
-
-
-real	0m1.116s
-user	0m1.107s
+real	0m1.461s
+user	0m1.457s
 sys	0m0.004s
 
-real	0m1.111s
-user	0m1.103s
-sys	0m0.008s
+CXXRTL - Max Opt - clang6
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
-real	0m1.114s
-user	0m1.114s
+
+real	0m1.455s
+user	0m1.444s
+sys	0m0.004s
+
+real	0m1.450s
+user	0m1.445s
+sys	0m0.004s
+
+real	0m1.447s
+user	0m1.446s
 sys	0m0.000s
 
 CXXRTL - Max Opt - gcc10.1
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m1.328s
-user	0m1.315s
+real	0m1.736s
+user	0m1.729s
+sys	0m0.000s
+
+real	0m1.726s
+user	0m1.717s
 sys	0m0.008s
 
-real	0m1.320s
-user	0m1.316s
-sys	0m0.004s
-
-real	0m1.320s
-user	0m1.320s
+real	0m1.727s
+user	0m1.726s
 sys	0m0.000s
 
 CXXRTL - Max Opt - gcc7.5
-Yosys 0.9+2406 (git sha1 971a7651, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m1.350s
-user	0m1.345s
-sys	0m0.000s
-
-real	0m1.344s
-user	0m1.340s
+real	0m1.688s
+user	0m1.678s
 sys	0m0.004s
 
-real	0m1.346s
-user	0m1.346s
+real	0m1.678s
+user	0m1.677s
+sys	0m0.000s
+
+real	0m1.674s
+user	0m1.673s
 sys	0m0.000s
 ```
+
 
 ## CXXRTL Recipe
 
@@ -238,7 +237,6 @@ At the time of writing this, the cxxrtl optimization recipe was as follows:
 ```
 read_verilog ../spinal/ExampleTop.sim.v
 hierarchy -check -top ExampleTop
-proc; flatten; clean; splitnets -driver; clean -purge
 write_ilang ExampleTop.sim.ilang
 write_cxxrtl ExampleTop.sim.cpp
 ```
