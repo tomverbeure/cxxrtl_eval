@@ -118,6 +118,8 @@ Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
 real	0m8.517s
 user	0m6.740s
 sys	0m1.146s
+```
+
 ## CXXRTL - Max Debug
 
 ```
@@ -230,7 +232,6 @@ user	0m1.673s
 sys	0m0.000s
 ```
 
-
 ## CXXRTL Recipe
 
 At the time of writing this, the cxxrtl optimization recipe was as follows:
@@ -288,26 +289,6 @@ real	0m19.918s
 user	0m19.277s
 sys	0m0.425s
 
-
-Compile time example_default_clang6_inline
-
-real	0m48.867s
-user	0m48.450s
-sys	0m0.381s
-
-
-Compile time example_default_clang9_inline
-
-real	0m56.930s
-user	0m56.328s
-sys	0m0.521s
-
-
-Compile time example_Og_clang9_inline
-
-real	8m23.285s
-user	8m18.564s
-sys	0m2.349s
 ```
 
 

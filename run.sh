@@ -112,6 +112,9 @@ echo >> $TOP/results.txt
 
 (time ./example_default_clang9 waves_regs_only.vcd 3) 2>> $TOP/results.txt > /dev/null
 
+echo "\`\`\`" >> $TOP/results.txt
+echo >> $TOP/results.txt
+
 ############################################################
 # CXXRTL - Max Debug
 ############################################################
