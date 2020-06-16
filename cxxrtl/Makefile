@@ -16,7 +16,7 @@ GCC10			= g++-10
 CLANG_INLINE	= -mllvm -inline-threshold=10000 
 
 YOSYS_PREPROC = "read_verilog $(VERILOG); hierarchy -check -top ExampleTop"
-YOSYS_RECIPE  = "proc; flatten; clean; splitnets -driver; clean -purge"
+YOSYS_RECIPE  = ""
 
 all: compile
 
