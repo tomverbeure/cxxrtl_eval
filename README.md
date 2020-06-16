@@ -13,12 +13,6 @@ The test design is a VexRiscv CPU with some RAM and some LEDs that are toggling.
 
 I run the simulation for 1M clock cycles, except on Icarus Verilog where I only do 100K. It's just too slow...
 
-I use the following Yosys optimization recipe: 
-
-```
-YOSYS_RECIPE  = "proc; flatten; clean; splitnets -driver; clean -purge"
-```
-
 ## Prepare Verilog
 
 (This is optional: the generated Verilog and .bin files are part of the repo.)
