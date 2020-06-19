@@ -1,14 +1,15 @@
 
-YOSYS_DIR	= ~/tools/yosys
+YOSYS			= yosys
+YOSYS_INCLUDE	= $(shell yosys-config --datdir)/include
 
 all: tb
 	./tb
 
-tb: blink.cpp main.cpp
-	clang++ -g -O3 -std=c++14 -I $(YOSYS_DIR) main.cpp -o tb
+tb: main.cpp blink.cpp
+	clang++ -g -O3 -std=c++14 -I $(YOSYS_INCLUDE) $< -o $@
 
 blink.cpp: blink.v
-	$(YOSYS_DIR)/yosys -p "read_verilog blink.v; hierarchy -top top; write_cxxrtl -Og blink.cpp"
+	$(YOSYS) -p "read_verilog $<; hierarchy -top top; write_cxxrtl -Og $@"
 
 
 clean:

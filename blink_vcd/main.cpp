@@ -30,7 +30,7 @@ int main()
 
     std::ofstream waves("waves.vcd");
 
-    int prev_led = 0;
+    bool prev_led = 0;
 
     top.step();
 
@@ -50,7 +50,7 @@ int main()
         top.step();
         vcd.sample(steps*2 + 1);
 
-        int cur_led = top.p_led.curr.data[0];
+        bool cur_led = top.p_led.get<bool>();
 
         if (cur_led != prev_led)
             cout << "cycle " << steps << " - led: " << cur_led << endl;

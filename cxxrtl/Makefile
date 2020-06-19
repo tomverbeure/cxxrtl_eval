@@ -1,12 +1,14 @@
 
 
-YOSYS		= ~/tools/yosys/yosys
-SRC			= main.cpp
-VERILOG		= ../spinal/ExampleTop.sim.v
-MEM_FILES	= ../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol0.bin 		\
-				../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol1.bin 		\
-				../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol2.bin 		\
-				../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol3.bin
+YOSYS			= yosys
+YOSYS_INCLUDE	= $(shell yosys-config --datdir)/include
+
+SRC				= main.cpp
+VERILOG			= ../spinal/ExampleTop.sim.v
+MEM_FILES		= ../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol0.bin 		\
+					../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol1.bin 		\
+					../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol2.bin 		\
+					../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol3.bin
 
 CLANG6			= clang++-6.0
 CLANG9			= clang++-9
@@ -40,49 +42,49 @@ compile_time.txt:
 example_default_clang9: ExampleTop.sim.default.cpp $(SRC)
 	echo >> compile_time.txt
 	echo "Compile time $@" >> compile_time.txt
-	(time $(CLANG9) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	(time $(CLANG9) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I $(YOSYS_INCLUDE) $(SRC) -o $@) 2>> compile_time.txt
 	echo >> compile_time.txt
 
 example_default_clang6: ExampleTop.sim.default.cpp $(SRC)
 	echo >> compile_time.txt
 	echo "Compile time $@" >> compile_time.txt
-	(time $(CLANG6) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	(time $(CLANG6) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I $(YOSYS_INCLUDE) $(SRC) -o $@) 2>> compile_time.txt
 	echo >> compile_time.txt
 
 example_default_clang9_inline: ExampleTop.sim.default.cpp $(SRC)
 	echo >> compile_time.txt
 	echo "Compile time $@" >> compile_time.txt
-	(time $(CLANG9) -g -O3 $(CLANG_INLINE) -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	(time $(CLANG9) -g -O3 $(CLANG_INLINE) -std=c++14 -DEXAMPLE_TOP=\"$<\" -I $(YOSYS_INCLUDE) $(SRC) -o $@) 2>> compile_time.txt
 	echo >> compile_time.txt
 
 example_default_clang6_inline: ExampleTop.sim.default.cpp $(SRC)
 	echo >> compile_time.txt
 	echo "Compile time $@" >> compile_time.txt
-	(time $(CLANG6) -g -O3 $(CLANG_INLINE) -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	(time $(CLANG6) -g -O3 $(CLANG_INLINE) -std=c++14 -DEXAMPLE_TOP=\"$<\" -I $(YOSYS_INCLUDE) $(SRC) -o $@) 2>> compile_time.txt
 	echo >> compile_time.txt
 
 example_Og_clang9: ExampleTop.sim.Og.cpp $(SRC)
 	echo >> compile_time.txt
 	echo "Compile time $@" >> compile_time.txt
-	(time $(CLANG9) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	(time $(CLANG9) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I $(YOSYS_INCLUDE) $(SRC) -o $@) 2>> compile_time.txt
 	echo >> compile_time.txt
 
 example_Og_clang9_inline: ExampleTop.sim.Og.cpp $(SRC)
 	echo >> compile_time.txt
 	echo "Compile time $@" >> compile_time.txt
-	(time $(CLANG9) -g -O3 $(CLANG_INLINE) -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	(time $(CLANG9) -g -O3 $(CLANG_INLINE) -std=c++14 -DEXAMPLE_TOP=\"$<\" -I $(YOSYS_INCLUDE) $(SRC) -o $@) 2>> compile_time.txt
 	echo >> compile_time.txt
 
 example_default_gcc10: ExampleTop.sim.default.cpp $(SRC)
 	echo >> compile_time.txt
 	echo "Compile time $@" >> compile_time.txt
-	(time $(GCC10) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	(time $(GCC10) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I $(YOSYS_INCLUDE) $(SRC) -o $@) 2>> compile_time.txt
 	echo >> compile_time.txt
 
 example_default_gcc7: ExampleTop.sim.default.cpp $(SRC)
 	echo >> compile_time.txt
 	echo "Compile time $@" >> compile_time.txt
-	(time $(GCC7) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I ~/tools/yosys/ $(SRC) -o $@) 2>> compile_time.txt
+	(time $(GCC7) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I $(YOSYS_INCLUDE) $(SRC) -o $@) 2>> compile_time.txt
 	echo >> compile_time.txt
 
 
