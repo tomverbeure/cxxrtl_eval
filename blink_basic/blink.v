@@ -1,7 +1,7 @@
 
 module blink(input clk, output led);
 
-    reg [7:0] counter = 0;
+    reg [15:0] counter = 16'h0;
 
     always @(posedge clk) 
         counter <= counter + 1'b1;
