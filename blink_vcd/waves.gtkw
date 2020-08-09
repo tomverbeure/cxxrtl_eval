@@ -1,0 +1,24 @@
+[*]
+[*] GTKWave Analyzer v3.3.76 (w)1999-2016 BSI
+[*] Sun Aug  9 21:01:28 2020
+[*]
+[dumpfile] "/Users/tom/projects/cxxrtl_eval/blink_vcd/waves.vcd"
+[dumpfile_mtime] "Sun Aug  9 21:00:40 2020"
+[dumpfile_size] 29042
+[savefile] "/Users/tom/projects/cxxrtl_eval/blink_vcd/waves.gtkw"
+[timestart] 249
+[size] 1000 350
+[pos] 212 20
+*-2.000000 255 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 193
+[signals_width] 133
+[sst_expanded] 1
+[sst_vpaned_height] 80
+@28
+clk
+@22
+counter[7:0]
+@28
+led
+[pattern_trace] 1
+[pattern_trace] 0
