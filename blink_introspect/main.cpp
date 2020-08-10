@@ -59,10 +59,10 @@ int main()
 
     for(int steps=0;steps<1000;++steps){
 
-        top.p_clk = value<1>{0u};
+        top.p_clk.set<bool>(false);
         top.step();
 
-        top.p_clk = value<1>{1u};
+        top.p_clk.set<bool>(true);
         top.step();
 
         bool cur_led = top.p_led.get<bool>();

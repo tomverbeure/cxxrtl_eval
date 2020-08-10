@@ -13,9 +13,9 @@ int main()
     top.step();
     for(int cycle=0;cycle<1000;++cycle){
 
-        top.p_clk.set<bool>(0);
+        top.p_clk.set<bool>(false);
         top.step();
-        top.p_clk.set<bool>(1);
+        top.p_clk.set<bool>(true);
         top.step();
 
         bool cur_led        = top.p_led.get<bool>();

@@ -46,11 +46,11 @@ int main()
 
     for(int steps=0;steps<1000;++steps){
 
-        top.p_clk = value<1>{0u};
+        top.p_clk.set<bool>(false);
         top.step();
         vcd.sample(steps*2 + 0);
 
-        top.p_clk = value<1>{1u};
+        top.p_clk.set<bool>(true);
         top.step();
         vcd.sample(steps*2 + 1);
 

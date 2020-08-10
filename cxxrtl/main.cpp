@@ -45,13 +45,13 @@ int main(int argc, char **argv)
         vcd.sample(0);
 
     for(int i=0;i<1000000;++i){
-        top.p_osc__clk__in = value<1>{0u};
+        top.p_osc__clk__in.set<bool>(false);
         top.step();
 
         if (dump_level)
             vcd.sample(i*2 + 0);
 
-        top.p_osc__clk__in = value<1>{1u};
+        top.p_osc__clk__in.set<bool>(true);
         top.step();
 
         if (dump_level)
