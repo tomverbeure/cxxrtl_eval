@@ -24,6 +24,7 @@ cd ../spinal
 make sim
 ```
 
+
 ## Icarus Verilog
 
 ```
@@ -32,7 +33,7 @@ make tb
 time ./tb
 ```
 
-Result:
+Result (for 100K clock cycles):
 ```
 ...
 real	0m26.389s
