@@ -1,8 +1,11 @@
 
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 #include <backends/cxxrtl/cxxrtl_vcd.h>
+
+#include <cxxrtl_lib.h>
 
 #include EXAMPLE_TOP
 
@@ -53,6 +56,14 @@ int main(int argc, char **argv)
 
         top.p_osc__clk__in.set<bool>(true);
         top.step();
+
+#if 0
+        if (i==10000){
+            cout << "Saving checkpoint..." << endl;
+            std::ofstream checkpoint("checkpoint.val");
+            save_state(all_debug_items, checkpoint);
+        }
+#endif
 
         if (dump_level)
             vcd.sample(i*2 + 1);
