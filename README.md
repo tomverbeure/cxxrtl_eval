@@ -1,6 +1,8 @@
 
 **NOTE: These results are still very much in flux as CXXRTL is under heavy development!**
 
+**Check out the ["CXXRTL, A Yosys Simulation Backend"](https://tomverbeure.github.io/2020/08/08/CXXRTL-the-New-Yosys-Simulation-Backend.html) article on my blog!**
+
 # Yosys CXXRTL simulation backend (Yosim?) Benchmark
 
 This project compares the simulation speed of the following open source simulators:
