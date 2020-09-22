@@ -18,12 +18,16 @@ int main()
 
     top.debug_info(all_debug_items);
 
+    cout << "Restoring from checkpoint..." << endl;
     std::ifstream checkpoint("checkpoint.val");
     restore_state(all_debug_items, checkpoint);
 
-    int prev_led = 0;
+    int prev_led = 1;
 
+    top.p_clk = value<1>{1u};
     top.step();
+
+    dump_all_items(all_debug_items);
 
     for(int steps=200;steps<1000;++steps){
 

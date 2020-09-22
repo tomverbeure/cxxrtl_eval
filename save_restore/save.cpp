@@ -42,6 +42,8 @@ int main()
             cout << "cycle " << steps << " - led: " << cur_led << " - counter: " << counter << endl;
 
         if (counter == 200){
+            dump_all_items(all_debug_items);
+
             std::ofstream checkpoint("checkpoint.val");
             save_state(all_debug_items, checkpoint);
 
