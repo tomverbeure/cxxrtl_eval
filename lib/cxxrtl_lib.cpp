@@ -1,4 +1,3 @@
-
 #include <backends/cxxrtl/cxxrtl.h>
 
 #include <iostream>
@@ -37,9 +36,8 @@ void restore_state(cxxrtl::debug_items &items, std::ifstream &restore_file)
         std::string name;
         uint32_t value;
 
-        restore_file >> name;
-
-        cout << name;
+        std::getline(restore_file,name);
+        //cout << name << endl;
 
         vector<cxxrtl::debug_item> &item_parts = items.table[name];
         for(auto &part: item_parts){
@@ -50,14 +48,12 @@ void restore_state(cxxrtl::debug_items &items, std::ifstream &restore_file)
                         restore_file >> value;
                         *mem_data = value;
                         ++mem_data;
-    
-                        cout << value;
+
+                        //cout << value << endl;
                     }
                 }
             }
         }
-
-        cout << endl;
     }
 }
 
@@ -76,3 +72,11 @@ void dump_all_items(cxxrtl::debug_items &items)
                  << endl;
     cout << endl;
 }
+
+uint32_t debug_item_get_value32(cxxrtl::debug_item &item)
+{
+    //return *item.begin()->curr;
+    return *item.curr;
+}
+
+
