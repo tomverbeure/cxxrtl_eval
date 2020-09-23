@@ -7,13 +7,13 @@
 using namespace std;
 using std::setw;
 
-void save_state(cxxrtl::debug_items &items, std::ofstream &save_file)
+void save_state(cxxrtl::debug_items &items, std::ofstream &save_file, uint32_t types)
 {
     save_file << items.table.size() << endl;
     for(auto &it : items.table){
         save_file << it.first << endl; 
         for(auto &part: it.second){
-            if (part.type == CXXRTL_WIRE || part.type == CXXRTL_MEMORY){
+            if (part.type & types){
                 uint32_t *mem_data = part.curr;
                 for(int a=0;a<part.depth;++a){
                     for(int n=0;n<part.width;n+=32){
@@ -26,10 +26,9 @@ void save_state(cxxrtl::debug_items &items, std::ofstream &save_file)
     }
 }
 
-void restore_state(cxxrtl::debug_items &items, std::ifstream &restore_file)
+void restore_state(cxxrtl::debug_items &items, std::ifstream &restore_file, uint32_t types)
 {
     int size;
-
     restore_file >> size;
 
     for(int i=0;i<size;++i){
@@ -41,7 +40,7 @@ void restore_state(cxxrtl::debug_items &items, std::ifstream &restore_file)
 
         vector<cxxrtl::debug_item> &item_parts = items.table[name];
         for(auto &part: item_parts){
-            if (part.type == CXXRTL_WIRE || part.type == CXXRTL_MEMORY){
+            if (part.type & types){
                 uint32_t *mem_data = part.curr;
                 for(int a=0;a<part.depth;++a){
                     for(int n=0;n<part.width;n+=32){
