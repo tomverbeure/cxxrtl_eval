@@ -14,4 +14,4 @@ blink.cpp: blink.vhdl
 	$(YOSYS) -m ghdl -p "ghdl blink; write_cxxrtl $@"
 
 clean:
-	\rm -f blink.cpp tb
+	\rm -f blink.cpp tb *.cf
