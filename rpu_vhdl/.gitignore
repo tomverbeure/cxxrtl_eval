@@ -1,0 +1,6 @@
+*.bin
+*.cf
+tb
+ExampleTop.sim.cpp
+waves.vcd
+
