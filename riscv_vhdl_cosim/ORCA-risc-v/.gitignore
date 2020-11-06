@@ -1,0 +1,13 @@
+veek_project/vblox1/*
+sim/vblox1/*
+veek_project/db/*
+sim/db/*
+veek_project/output_files/*
+veek_project/incremental_db/*
+
+veek_project_bp*
+
+wishbone/cae_library/*
+ice40ultra/ice40ultra_Implmnt/*
+ice40ultra/init_*.imem
+*/test/*

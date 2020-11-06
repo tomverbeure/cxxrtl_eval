@@ -1,0 +1,86 @@
+#-- Synopsys, Inc.
+#-- Project file /nfs/home/joel/Documents/riscV/ice40ultra/ice40ultra_syn.prj
+#project files
+
+add_file -vhdl -lib work "../utils.vhd"
+add_file -vhdl -lib work "../components.vhd"
+add_file -vhdl -lib work "hdl/top_util_pkg.vhd"
+add_file -vhdl -lib work "hdl/top_component_pkg.vhd"
+add_file -vhdl -lib work "../alu.vhd"
+add_file -vhdl -lib work "../branch_unit.vhd"
+add_file -vhdl -lib work "../decode.vhd"
+add_file -vhdl -lib work "../execute.vhd"
+add_file -vhdl -lib work "../register_file.vhd"
+add_file -vhdl -lib work "../riscv.vhd"
+add_file -vhdl -lib work "../sys_call.vhd"
+add_file -vhdl -lib work "../wishbone_wrapper.vhd"
+add_file -vhdl -lib work "../instruction_fetch.vhd"
+add_file -vhdl -lib work "../load_store_unit.vhd"
+add_file -vhdl -lib work "hdl/uart_rd1042/uart_core.vhd"
+add_file -vhdl -lib work "hdl/uart_rd1042/intface.vhd"
+add_file -vhdl -lib work "hdl/uart_rd1042/modem.vhd"
+add_file -vhdl -lib work "hdl/uart_rd1042/rxcver.vhd"
+add_file -vhdl -lib work "hdl/uart_rd1042/rxcver_fifo.vhd"
+add_file -vhdl -lib work "hdl/uart_rd1042/txcver_fifo.vhd"
+add_file -vhdl -lib work "hdl/uart_rd1042/txmitt.vhd"
+add_file -vhdl -lib work "hdl/wb_ram.vhd"
+add_file -vhdl -lib work "hdl/wb_arbiter.vhd"
+add_file -vhdl -lib work "hdl/bram.vhd"
+add_file -vhdl -lib work "hdl/wb_pio.vhd"
+add_file -vhdl -lib work "hdl/wb_splitter.vhd"
+add_file -vhdl -lib work "hdl/pmod_mic/pmod_mic_wb.vhd"
+add_file -vhdl -lib work "hdl/pmod_mic/pmod_mic_ref_comp.vhd"
+add_file -verilog -lib work "hdl/my_led.v"
+add_file -vhdl -lib work "hdl/top.vhd"
+add_file -constraint -lib work "constraints/lve_timing.sdc"
+#implementation: "ice40ultra_Implmnt"
+impl -add ice40ultra_Implmnt -type fpga
+
+#implementation attributes
+set_option -vlog_std v2001
+set_option -project_relative_includes 1
+
+#device options
+set_option -technology SBTiCE5LP
+set_option -part iCE5LP4K
+set_option -package SWG36
+set_option -speed_grade
+set_option -part_companion ""
+
+#compilation/mapping options
+
+# mapper_options
+set_option -frequency auto
+set_option -write_verilog 0
+set_option -write_vhdl 0
+
+# Silicon Blue iCE5LP
+set_option -maxfan 10000
+set_option -disable_io_insertion 0
+set_option -pipe 1
+set_option -retiming 0
+set_option -update_models_cp 0
+set_option -fixgatedclocks 2
+set_option -fixgeneratedclocks 0
+
+# NFilter
+set_option -popfeed 0
+set_option -constprop 0
+set_option -createhierarchy 0
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_format "edif"
+project -result_file ./ice40ultra_Implmnt/ice40ultra.edf
+project -log_file "./ice40ultra_Implmnt/ice40ultra.srr"
+impl -active ice40ultra_Implmnt
+project -run synthesis -clean

@@ -1,0 +1,144 @@
+[*]
+[*] GTKWave Analyzer v3.3.90 (w)1999-2018 BSI
+[*] Fri Nov  6 18:44:00 2020
+[*]
+[dumpfile] "/home/tom/projects/cxxrtl_eval/riscv_vhdl_cosim/waves.vcd"
+[dumpfile_mtime] "Fri Nov  6 18:07:26 2020"
+[dumpfile_size] 198870787
+[savefile] "/home/tom/projects/cxxrtl_eval/riscv_vhdl_cosim/waves.gtkw"
+[timestart] 60
+[size] 2617 1326
+[pos] 37 104
+*-2.000000 78 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] cpu_u_cpu.
+[treeopen] cpu_u_cpu.u_cpu.
+[treeopen] cpu_u_cpu.u_cpu.cpu.
+[treeopen] cpu_u_cpu.u_cpu.cpu.u_orca.
+[treeopen] cpu_u_cpu.u_cpu.cpu.u_orca.d.
+[treeopen] cpu_u_cpu.u_cpu.cpu.u_orca.x.
+[treeopen] cpu_u_cpu.u_cpu.cpu.u_orca.x.alu.
+[treeopen] cpu_u_cpu.u_cpu.cpu.u_orca.x.syscall.
+[sst_width] 533
+[signals_width] 550
+[sst_expanded] 1
+[sst_vpaned_height] 522
+@28
+clk_cpu
+clk_cpu_reset_
+@200
+-
+@28
+cpu_u_cpu.u_cpu.cpu_iBus_cmd_valid
+cpu_u_cpu.u_cpu.mainBusArbiter_io_iBus_cmd_ready
+@22
+cpu_u_cpu.u_cpu.cpu_iBus_cmd_payload_pc[31:0]
+@28
+cpu_u_cpu.u_cpu.mainBusArbiter_io_iBus_rsp_valid
+@22
+cpu_u_cpu.u_cpu.mainBusArbiter_io_iBus_rsp_payload_inst[31:0]
+@200
+-
+@28
+cpu_u_cpu.u_cpu.cpu.dBus_cmd_valid
+cpu_u_cpu.u_cpu.cpu.dBus_cmd_ready
+cpu_u_cpu.u_cpu.cpu.dBus_cmd_payload_wr
+@22
+cpu_u_cpu.u_cpu.cpu.dBus_cmd_payload_address[31:0]
+cpu_u_cpu.u_cpu.cpu.dBus_cmd_payload_data[31:0]
+@28
+cpu_u_cpu.u_cpu.cpu.dBus_cmd_payload_size[1:0]
+@22
+cpu_u_cpu.u_cpu.cpu.dBus_rsp_data[31:0]
+@28
+cpu_u_cpu.u_cpu.cpu.dBus_rsp_ready
+@200
+-
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_instruction_read
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_instruction_waitrequest
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_instruction_address[31:0]
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_instruction_readdatavalid
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_instruction_readdata[31:0]
+@200
+-
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_data_read
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_data_write
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_data_waitrequest
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_data_address[31:0]
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_data_writedata[31:0]
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_data_byteenable[3:0]
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_data_readdatavalid
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.avm_data_readdata[31:0]
+@200
+-
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.instr_fetch.clk
+cpu_u_cpu.u_cpu.cpu.u_orca.instr_fetch.valid_instr_out
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.instr_fetch.instr_out[31:0]
+@200
+-
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.d.instr_out[31:0]
+cpu_u_cpu.u_cpu.cpu.u_orca.x.alu.sign_extension[19:0]
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.x.is_branch
+@200
+-
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.x.rs1_mux[1:0]
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.x.rs1_data[31:0]
+cpu_u_cpu.u_cpu.cpu.u_orca.x.rs1_data_fwd[31:0]
+@200
+-
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.x.rs2_mux[1:0]
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.x.rs2_data[31:0]
+cpu_u_cpu.u_cpu.cpu.u_orca.x.rs2_data_fwd[31:0]
+@200
+-
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.x.alu.oc.rs1_data[31:0]
+cpu_u_cpu.u_cpu.cpu.u_orca.x.alu.oc.rs2_data[31:0]
+@200
+-
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.x.alu.oc.instruction[31:0]
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.x.alu.oc.is_immediate
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.x.alu.oc.data1[31:0]
+cpu_u_cpu.u_cpu.cpu.u_orca.x.alu.oc.data2[31:0]
+@200
+-
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.d.register_file_1.writeback_enable
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.d.register_file_1.writeback_sel[4:0]
+cpu_u_cpu.u_cpu.cpu.u_orca.d.register_file_1.wb_data_latched[31:0]
+cpu_u_cpu.u_cpu.cpu.u_orca.d.register_file_1.writeback_data[31:0]
+@200
+-
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.d.wb_enable
+@22
+cpu_u_cpu.u_cpu.cpu.u_orca.d.wb_sel[4:0]
+cpu_u_cpu.u_cpu.cpu.u_orca.d.wb_data[31:0]
+@201
+-
+@28
+cpu_u_cpu.u_cpu.cpu.u_orca.x.alu.data_enable
+cpu_u_cpu.u_cpu.cpu.u_orca.x.br_data_en
+cpu_u_cpu.u_cpu.cpu.u_orca.x.ls_unit.data_enable
+cpu_u_cpu.u_cpu.cpu.u_orca.x.wb_mux[1:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -4,20 +4,7 @@
 
 .org 0x00000000
 start:
-	/* set IRQ stack pointer */
-    /* Top 128 bytes are used to save all registers. */
-	li sp,(8*1024) - 128
-
-    /* Save IRQ stack pointer in mscratch */
-    csrrw sp, mscratch, sp
-
-	li sp,((8*1024) - 512)
-
-	/* jump to main C code */
-	jal ra,main
-
-	/* trap */
-	ebreak
+    j start2
 
 .org 0x00000020
 trapEntry: 
@@ -97,3 +84,20 @@ trapEntry:
 
 	mret
 
+//.org 0x00000200
+.balign 512             // For some reason, .org doesn't work here???
+start2:
+	/* set IRQ stack pointer */
+    /* Top 128 bytes are used to save all registers. */
+	li sp,(8*1024) - 128
+
+    /* Save IRQ stack pointer in mscratch */
+    csrrw sp, mscratch, sp
+
+	li sp,((8*1024) - 512)
+
+	/* jump to main C code */
+	jal ra,main
+
+	/* trap */
+	ebreak

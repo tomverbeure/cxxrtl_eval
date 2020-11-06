@@ -1,0 +1,8 @@
+# Files in dependency order for Modelsim
+#rxcver_fifo.vhd
+#txcver_fifo.vhd
+intface.vhd
+modem.vhd
+rxcver.vhd
+txmitt.vhd
+uart_core.vhd

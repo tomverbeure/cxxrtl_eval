@@ -1,0 +1,30 @@
+# ##############################################################################
+
+# iCEcube PCF
+
+# Version:            2015.04.27409
+
+# File Generated:     Nov 5 2015 16:53:02
+
+# Family & Device:    iCE5LP4K
+
+# Package:            SWG36
+
+# ##############################################################################
+
+###IOSet List 15
+set_io clk C2
+set_io cts B1
+set_io led_out[0] F4
+set_io led_out[1] B4
+set_io led_out[2] E2
+set_io mic0_pmod[0] D5
+set_io mic0_pmod[2] E5
+set_io mic0_pmod[3] E6
+set_io mic1_pmod[0] E3
+set_io mic1_pmod[2] F5
+set_io mic1_pmod[3] F3
+set_io reset_btn F6 -pullup yes
+set_io rts D2
+set_io rxd C1
+set_io txd B2
