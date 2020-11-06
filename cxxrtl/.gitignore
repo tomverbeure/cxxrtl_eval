@@ -8,3 +8,6 @@ example*gcc*
 yosys
 t
 *.vcd
+*.o
+*.log
+checkpoint.val
