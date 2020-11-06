@@ -2,7 +2,7 @@
 MEM_WORDS		= 2048
 MEM_BYTES 		= 8192
 
-MARCH 			= rv32imc
+MARCH 			= rv32im
 CPU_FREQ_MHZ	= 50
 CC_OPT 			= -Os
 

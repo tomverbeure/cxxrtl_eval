@@ -1,3 +1,6 @@
 [submodule "spinal/VexRiscv"]
 	path = spinal/VexRiscv
 	url = https://github.com/SpinalHDL/VexRiscv.git
+[submodule "rpu_vhdl/RPU"]
+	path = rpu_vhdl/RPU
+	url = https://github.com/tomverbeure/RPU.git
