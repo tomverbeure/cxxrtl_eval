@@ -1,4 +1,3 @@
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -14,9 +13,7 @@ architecture RTL of blink is
     signal counter          : unsigned(11 downto 0) := "000000000000";
 begin
 
-
-    process(clk)
-    begin
+    process(clk) begin
         if rising_edge(clk) then
             counter         <= counter + 1;
         end if;
