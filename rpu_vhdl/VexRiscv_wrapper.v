@@ -77,17 +77,18 @@ module VexRiscv(
   assign MEM_I_dataReady            = dBus_rsp_ready;
 
   always @(*) begin
+      MEM_I_data    = dBus_rsp_data;        // Default to avoid a latch
       case(MEM_O_byteEnable)
           2'b00: begin
               // Byte access
-              MEM_I_data            = (dBus_rsp_data >> (MEM_O_addr[1:0] * 8)) & 32'hff;
+              MEM_I_data    = (dBus_rsp_data >> (MEM_O_addr[1:0] * 8)) & 32'hff;
           end
           2'b01: begin
               // HalfWord access
-              MEM_I_data            = (dBus_rsp_data >> (MEM_O_addr[1] * 16)) & 32'hffff;
+              MEM_I_data    = (dBus_rsp_data >> (MEM_O_addr[1] * 16)) & 32'hffff;
           end
           2'b10: begin
-              MEM_I_data            = dBus_rsp_data;
+              MEM_I_data    = dBus_rsp_data;
           end
       endcase
   end
