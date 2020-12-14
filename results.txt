@@ -1,193 +1,192 @@
 ## Verilator
 
 ```
-
 Verilator - No Waves
 Verilator 4.033 devel rev v4.032-73-gdef40fa
 
 
-real	0m0.456s
-user	0m0.452s
-sys	0m0.004s
-
-real	0m0.456s
-user	0m0.456s
+real	0m0.450s
+user	0m0.450s
 sys	0m0.000s
 
-real	0m0.456s
-user	0m0.456s
+real	0m0.449s
+user	0m0.449s
+sys	0m0.000s
+
+real	0m0.449s
+user	0m0.450s
 sys	0m0.000s
 
 Verilator - VCD
 Verilator 4.033 devel rev v4.032-73-gdef40fa
 
 
-real	0m9.381s
-user	0m3.371s
-sys	0m2.406s
+real	0m6.807s
+user	0m3.093s
+sys	0m2.040s
 
-real	0m7.503s
-user	0m3.484s
-sys	0m2.447s
+real	0m6.761s
+user	0m3.038s
+sys	0m2.229s
 
-real	0m7.078s
-user	0m3.421s
-sys	0m2.521s
+real	0m7.105s
+user	0m3.082s
+sys	0m2.224s
 ```
 
 ##  CXXRTL - Max Opt
 
 ```
-
 CXXRTL - Max Opt - No Waves
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m1.473s
-user	0m1.472s
-sys	0m0.000s
-
-real	0m1.470s
-user	0m1.469s
-sys	0m0.000s
-
-real	0m1.472s
-user	0m1.467s
+real	0m1.465s
+user	0m1.452s
 sys	0m0.004s
 
+real	0m1.451s
+user	0m1.443s
+sys	0m0.008s
+
+real	0m1.448s
+user	0m1.448s
+sys	0m0.000s
+
 CXXRTL - Max Opt - VCD full (incl Mem)
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	1m34.634s
-user	1m32.743s
-sys	0m1.759s
+real	1m33.319s
+user	1m31.562s
+sys	0m1.152s
 
 CXXRTL - Max Opt - VCD full (no Mem)
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m9.158s
-user	0m7.337s
-sys	0m1.170s
+real	0m7.965s
+user	0m6.714s
+sys	0m0.973s
 
 CXXRTL - Max Opt - VCD regs only
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m8.517s
-user	0m6.740s
-sys	0m1.146s
+real	0m8.222s
+user	0m6.291s
+sys	0m0.940s
+```
+
 ## CXXRTL - Max Debug
 
 ```
-
 CXXRTL - Max Debug - No Waves
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m2.474s
-user	0m2.384s
+real	0m2.465s
+user	0m2.423s
 sys	0m0.008s
 
-real	0m2.382s
-user	0m2.381s
-sys	0m0.000s
+real	0m2.407s
+user	0m2.403s
+sys	0m0.004s
 
-real	0m2.373s
-user	0m2.371s
+real	0m2.406s
+user	0m2.406s
 sys	0m0.000s
 
 CXXRTL - Max Debug - VCD full (incl Mem)
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	2m3.533s
-user	1m58.238s
-sys	0m4.685s
+real	2m1.431s
+user	1m56.116s
+sys	0m4.931s
 
 CXXRTL - Max Debug - VCD full (no Mem)
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m39.661s
-user	0m33.152s
-sys	0m5.129s
+real	0m36.630s
+user	0m31.641s
+sys	0m3.925s
 
 CXXRTL - Max Debug - VCD regs only
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m10.470s
-user	0m7.970s
-sys	0m1.659s
+real	0m8.580s
+user	0m7.327s
+sys	0m0.908s
 ```
 
 ## CXXRTL - Compiler Versions
+
 ```
 
-
 CXXRTL - Max Opt - clang9
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m1.488s
-user	0m1.474s
-sys	0m0.012s
-
-real	0m1.473s
-user	0m1.472s
-sys	0m0.000s
-
-real	0m1.461s
-user	0m1.457s
+real	0m1.454s
+user	0m1.449s
 sys	0m0.004s
 
-CXXRTL - Max Opt - clang6
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
+real	0m1.451s
+user	0m1.451s
+sys	0m0.000s
 
-
-real	0m1.455s
+real	0m1.448s
 user	0m1.444s
 sys	0m0.004s
 
-real	0m1.450s
-user	0m1.445s
-sys	0m0.004s
+CXXRTL - Max Opt - clang6
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
-real	0m1.447s
-user	0m1.446s
+
+real	0m1.398s
+user	0m1.388s
+sys	0m0.008s
+
+real	0m1.390s
+user	0m1.390s
+sys	0m0.000s
+
+real	0m1.388s
+user	0m1.388s
 sys	0m0.000s
 
 CXXRTL - Max Opt - gcc10.1
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
 
 
-real	0m1.736s
-user	0m1.729s
-sys	0m0.000s
-
-real	0m1.726s
-user	0m1.717s
-sys	0m0.008s
-
-real	0m1.727s
-user	0m1.726s
-sys	0m0.000s
-
-CXXRTL - Max Opt - gcc7.5
-Yosys 0.9+2406 (git sha1 334ec5fa, clang 6.0.0-1ubuntu2 -fPIC -Os)
-
-
-real	0m1.688s
-user	0m1.678s
+real	0m1.594s
+user	0m1.583s
 sys	0m0.004s
 
-real	0m1.678s
-user	0m1.677s
+real	0m1.582s
+user	0m1.583s
 sys	0m0.000s
 
-real	0m1.674s
-user	0m1.673s
+real	0m1.579s
+user	0m1.575s
+sys	0m0.004s
+
+CXXRTL - Max Opt - gcc7.5
+Yosys 0.9+3667 (git sha1 e7f36d01e, clang 6.0.0-1ubuntu2 -fPIC -Os)
+
+
+real	0m2.409s
+user	0m2.399s
+sys	0m0.004s
+
+real	0m2.390s
+user	0m2.390s
+sys	0m0.000s
+
+real	0m2.388s
+user	0m2.388s
 sys	0m0.000s
 ```

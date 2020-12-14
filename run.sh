@@ -94,7 +94,7 @@ echo "CXXRTL - Max Opt - VCD full (incl Mem)" >> $TOP/results.txt
 ./yosys --version >> $TOP/results.txt
 echo >> $TOP/results.txt
 
-(time ./example_default_clang9 waves_full_incl_mem.vcd 1) 2>> $TOP/results.txt > /dev/null
+(time ./example_default_clang9 1 waves_full_incl_mem.vcd) 2>> $TOP/results.txt > /dev/null
 
 echo >> $TOP/results.txt
 echo "CXXRTL - Max Opt - VCD full (no Mem)"
@@ -102,7 +102,7 @@ echo "CXXRTL - Max Opt - VCD full (no Mem)" >> $TOP/results.txt
 ./yosys --version >> $TOP/results.txt
 echo >> $TOP/results.txt
 
-(time ./example_default_clang9 waves_full_no_mem.vcd 2) 2>> $TOP/results.txt > /dev/null
+(time ./example_default_clang9 2 waves_full_no_mem.vcd) 2>> $TOP/results.txt > /dev/null
 
 echo >> $TOP/results.txt
 echo "CXXRTL - Max Opt - VCD regs only"
@@ -110,7 +110,7 @@ echo "CXXRTL - Max Opt - VCD regs only" >> $TOP/results.txt
 ./yosys --version >> $TOP/results.txt
 echo >> $TOP/results.txt
 
-(time ./example_default_clang9 waves_regs_only.vcd 3) 2>> $TOP/results.txt > /dev/null
+(time ./example_default_clang9 3 waves_regs_only.vcd) 2>> $TOP/results.txt > /dev/null
 
 echo "\`\`\`" >> $TOP/results.txt
 echo >> $TOP/results.txt
@@ -142,7 +142,7 @@ echo "CXXRTL - Max Debug - VCD full (incl Mem)" >> $TOP/results.txt
 ./yosys --version >> $TOP/results.txt
 echo >> $TOP/results.txt
 
-(time ./example_Og_clang9 waves_full_incl_mem.vcd 1) 2>> $TOP/results.txt > /dev/null
+(time ./example_Og_clang9 1 waves_full_incl_mem.vcd) 2>> $TOP/results.txt > /dev/null
 
 echo >> $TOP/results.txt
 echo "CXXRTL - Max Debug - VCD full (no Mem)"
@@ -150,7 +150,7 @@ echo "CXXRTL - Max Debug - VCD full (no Mem)" >> $TOP/results.txt
 ./yosys --version >> $TOP/results.txt
 echo >> $TOP/results.txt
 
-(time ./example_Og_clang9 waves_full_no_mem.vcd 2) 2>> $TOP/results.txt > /dev/null
+(time ./example_Og_clang9 2 waves_full_no_mem.vcd) 2>> $TOP/results.txt > /dev/null
 
 echo >> $TOP/results.txt
 echo "CXXRTL - Max Debug - VCD regs only"
@@ -158,7 +158,7 @@ echo "CXXRTL - Max Debug - VCD regs only" >> $TOP/results.txt
 ./yosys --version >> $TOP/results.txt
 echo >> $TOP/results.txt
 
-(time ./example_Og_clang9 waves_regs_only.vcd 3) 2>> $TOP/results.txt > /dev/null
+(time ./example_Og_clang9 3 waves_regs_only.vcd) 2>> $TOP/results.txt > /dev/null
 
 echo "\`\`\`" >> $TOP/results.txt
 echo >> $TOP/results.txt
