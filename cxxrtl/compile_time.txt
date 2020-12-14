@@ -1,56 +1,45 @@
 
 Compile time example_default_clang9
 
-real	0m7.321s
-user	0m6.976s
-sys	0m0.183s
+real	0m11.839s
+user	0m11.665s
+sys	0m0.154s
 
 
 Compile time example_Og_clang9
 
-real	0m9.195s
-user	0m9.020s
-sys	0m0.142s
+real	0m23.999s
+user	0m23.725s
+sys	0m0.223s
 
 
 Compile time example_default_clang6
 
-real	0m17.038s
-user	0m16.562s
-sys	0m0.181s
+real	0m23.264s
+user	0m22.935s
+sys	0m0.219s
 
 
 Compile time example_default_gcc10
+In file included from main.cpp:10:
+ExampleTop.sim.default.cpp: In member function ‘virtual void cxxrtl_design::p_ExampleTop::debug_info(cxxrtl::debug_items&, std::string)’:
+ExampleTop.sim.default.cpp:10612:6: note: variable tracking size limit exceeded with ‘-fvar-tracking-assignments’, retrying without
+10612 | void p_ExampleTop::debug_info(debug_items &items, std::string path) {
+      |      ^~~~~~~~~~~~
 
-real	0m32.420s
-user	0m31.701s
-sys	0m0.497s
+real	1m18.003s
+user	1m16.594s
+sys	0m0.981s
 
 
 Compile time example_default_gcc7
+In file included from main.cpp:10:0:
+ExampleTop.sim.Og.cpp: In member function ‘virtual void cxxrtl_design::p_ExampleTop::debug_info(cxxrtl::debug_items&, std::__cxx11::string)’:
+ExampleTop.sim.Og.cpp:15060:6: note: variable tracking size limit exceeded with -fvar-tracking-assignments, retrying without
+ void p_ExampleTop::debug_info(debug_items &items, std::string path) {
+      ^~~~~~~~~~~~
 
-real	0m19.918s
-user	0m19.277s
-sys	0m0.425s
-
-
-Compile time example_default_clang6_inline
-
-real	0m48.867s
-user	0m48.450s
-sys	0m0.381s
-
-
-Compile time example_default_clang9_inline
-
-real	0m56.930s
-user	0m56.328s
-sys	0m0.521s
-
-
-Compile time example_Og_clang9_inline
-
-real	8m23.285s
-user	8m18.564s
-sys	0m2.349s
+real	1m9.741s
+user	1m8.749s
+sys	0m0.794s
 

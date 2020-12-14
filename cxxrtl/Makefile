@@ -67,13 +67,13 @@ example_default_clang6_inline: ExampleTop.sim.default.cpp $(SRC) $(OBJ)
 example_Og_clang9: ExampleTop.sim.Og.cpp $(SRC) $(OBJ)
 	echo >> compile_time.txt
 	echo "Compile time $@" >> compile_time.txt
-	(time $(CLANG9) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I $(YOSYS_INCLUDE) $(SRC) -I../lib $(OBJ) -o $@) 2>> compile_time.txt
+	(time $(CLANG9) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -DSPY_UART_TX -I $(YOSYS_INCLUDE) $(SRC) -I../lib $(OBJ) -o $@) 2>> compile_time.txt
 	echo >> compile_time.txt
 
 example_Og_clang9_inline: ExampleTop.sim.Og.cpp $(SRC) $(OBJ)
 	echo >> compile_time.txt
 	echo "Compile time $@" >> compile_time.txt
-	(time $(CLANG9) -g -O3 $(CLANG_INLINE) -std=c++14 -DEXAMPLE_TOP=\"$<\" -I $(YOSYS_INCLUDE) $(SRC) -I../lib $(OBJ) -o $@) 2>> compile_time.txt
+	(time $(CLANG9) -g -O3 $(CLANG_INLINE) -std=c++14 -DEXAMPLE_TOP=\"$<\" -DSPY_UART_TX -I $(YOSYS_INCLUDE) $(SRC) -I../lib $(OBJ) -o $@) 2>> compile_time.txt
 	echo >> compile_time.txt
 
 example_default_gcc10: ExampleTop.sim.default.cpp $(SRC) $(OBJ)
@@ -85,7 +85,7 @@ example_default_gcc10: ExampleTop.sim.default.cpp $(SRC) $(OBJ)
 example_default_gcc7: ExampleTop.sim.Og.cpp $(SRC) $(OBJ)
 	echo >> compile_time.txt
 	echo "Compile time $@" >> compile_time.txt
-	(time $(GCC7) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -I $(YOSYS_INCLUDE) $(SRC) -I../lib $(OBJ) -o $@) 2>> compile_time.txt
+	(time $(GCC7) -g -O3 -std=c++14 -DEXAMPLE_TOP=\"$<\" -DSPY_UART_TX -I $(YOSYS_INCLUDE) $(SRC) -I../lib $(OBJ) -o $@) 2>> compile_time.txt
 	echo >> compile_time.txt
 
 
