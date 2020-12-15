@@ -68,13 +68,11 @@ int main(int argc, char **argv)
     if (dump_level >=1 && dump_level <= 3)
         vcd.sample(0);
 
-#ifdef SPY_UART_TX
     cxxrtl::debug_item psel    = all_debug_items.at("cpu_u_cpu u_uart io_apb_PSEL");
     cxxrtl::debug_item penable = all_debug_items.at("cpu_u_cpu u_uart io_apb_PENABLE");
     cxxrtl::debug_item pwrite  = all_debug_items.at("cpu_u_cpu u_uart io_apb_PWRITE");
     cxxrtl::debug_item pwdata  = all_debug_items.at("cpu_u_cpu u_uart io_apb_PWDATA");
     cxxrtl::debug_item paddr   = all_debug_items.at("cpu_u_cpu u_uart io_apb_PADDR");
-#endif
 
     int led_red_cntr = 0;
 
@@ -88,7 +86,6 @@ int main(int argc, char **argv)
         top.p_osc__clk__in.set<bool>(true);
         top.step();
 
-#ifdef SPY_UART_TX
         if (debug_item_get_value32(psel)    &&
             debug_item_get_value32(penable) &&
             debug_item_get_value32(pwrite)  &&
@@ -97,8 +94,6 @@ int main(int argc, char **argv)
             // APB write to UART RXTX register
             cout << "UART TX: " << (char)debug_item_get_value32(pwdata) << endl;
         }
-#endif
-
 
         if (dump_level == 4 && i==10000){
             cout << "Saving checkpoint..." << endl;
