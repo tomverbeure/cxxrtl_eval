@@ -2,6 +2,7 @@
 
 SRC_FILE 			= ../spinal/ExampleTop.sim.v
 VERILATOR_PREFIX	= /opt/verilator/
+CXX			= clang++
 
 all: tb_vcd tb_fst
 
@@ -10,7 +11,7 @@ all: tb_vcd tb_fst
 #============================================================
 
 tb: verilator
-	clang++-9 -std=c++14 -g -O3 -I$(VERILATOR_PREFIX)/share/verilator/include/ -I$(VERILATOR_PREFIX)/share/verilator/include/vltstd -Iobj_dir \
+	$(CXX) -std=c++14 -g -O3 -I$(VERILATOR_PREFIX)/share/verilator/include/ -I$(VERILATOR_PREFIX)/share/verilator/include/vltstd -Iobj_dir \
 	     main.cpp \
 	    $(VERILATOR_PREFIX)/share/verilator/include/verilated.cpp \
 	    ./obj_dir/Vtb__ALL.a -o tb
@@ -27,7 +28,7 @@ verilator:
 #============================================================
 
 tb_vcd: verilator_vcd
-	clang++-9 -std=c++14 -g -O3 -DTRACE_VCD -I$(VERILATOR_PREFIX)/share/verilator/include/ -I$(VERILATOR_PREFIX)/share/verilator/include/vltstd -Iobj_dir_vcd \
+	$(CXX) -std=c++14 -g -O3 -DTRACE_VCD -I$(VERILATOR_PREFIX)/share/verilator/include/ -I$(VERILATOR_PREFIX)/share/verilator/include/vltstd -Iobj_dir_vcd \
 	     main.cpp \
 	    $(VERILATOR_PREFIX)/share/verilator/include/verilated.cpp \
 	    $(VERILATOR_PREFIX)/share/verilator/include/verilated_vcd_c.cpp \
@@ -45,7 +46,7 @@ verilator_vcd:
 #============================================================
 
 tb_fst: verilator_fst
-	clang++-9 -std=c++14 -g -O3 -DTRACE_FST -I$(VERILATOR_PREFIX)/share/verilator/include/ -I$(VERILATOR_PREFIX)/share/verilator/include/vltstd -Iobj_dir_fst \
+	$(CXX) -std=c++14 -g -O3 -DTRACE_FST -I$(VERILATOR_PREFIX)/share/verilator/include/ -I$(VERILATOR_PREFIX)/share/verilator/include/vltstd -Iobj_dir_fst \
 	     main.cpp \
 	    $(VERILATOR_PREFIX)/share/verilator/include/verilated.cpp \
 	    $(VERILATOR_PREFIX)/share/verilator/include/verilated_fst_c.cpp \
