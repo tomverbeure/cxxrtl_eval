@@ -2,6 +2,7 @@
 obj_dir*
 tb
 tb_vcd
+tb_vcd_threaded
 tb_fst
-waves.vcd*
-waves.fst
+*.vcd
+*.fst
