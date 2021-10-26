@@ -55,12 +55,13 @@ int main(int argc, char **argv)
 
 #if defined(TRACE_VCD) || defined(TRACE_FST)
         trace->dump(i*2+1);
-        trace->flush();
+    trace->flush();
 #endif
 
     } 
 
 #if defined(TRACE_VCD) || defined(TRACE_FST)
+    trace->flush();
     trace->close();
 #endif
     
