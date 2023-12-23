@@ -1,11 +1,11 @@
 #include <stdlib.h>
 #include "Vtb.h"
 
-#ifdef TRACE_VCD
+#if VM_TRACE_VCD==1
 #include "verilated_vcd_c.h"
 #endif
 
-#ifdef TRACE_FST
+#if VM_TRACE_FST==1
 #include "verilated_fst_c.h"
 #endif
 
@@ -20,24 +20,24 @@ int main(int argc, char **argv)
         nr_cycles = atoi(argv[1]);
 
     Vtb *tb = new Vtb;
-#if defined(TRACE_VCD)
+#if VM_TRACE_VCD==1
     VerilatedVcdC *trace;
 #endif
-#if defined(TRACE_FST)
+#if VM_TRACE_FST==1
     VerilatedFstC *trace;
 #endif
 
-#if defined(TRACE_VCD) || defined(TRACE_FST)
+#if VM_TRACE_VCD==1 || VM_TRACE_FST==1
     Verilated::traceEverOn(true);
 #endif
 
-#if defined(TRACE_VCD)
+#if VM_TRACE_VCD==1
     trace = new VerilatedVcdC;
     tb->trace(trace, 99);
     trace->open("waves.vcd");
 #endif
 
-#if defined(TRACE_FST)
+#if VM_TRACE_FST==1
     trace = new VerilatedFstC;
     tb->trace(trace, 99);
     trace->open("waves.fst");
@@ -46,20 +46,20 @@ int main(int argc, char **argv)
     for(int i=0;i<nr_cycles;++i){
         tb->osc_clk = 1;
         tb->eval();
-#if defined(TRACE_VCD) || defined(TRACE_FST)
+#if VM_TRACE_VCD==1 || VM_TRACE_FST==1
         trace->dump(i*2);
 #endif
 
         tb->osc_clk = 0;
         tb->eval();
 
-#if defined(TRACE_VCD) || defined(TRACE_FST)
+#if VM_TRACE_VCD==1 || VM_TRACE_FST==1
         trace->dump(i*2+1);
 #endif
 
     } 
 
-#if defined(TRACE_VCD) || defined(TRACE_FST)
+#if defined(VM_TRACE_VCD) || defined(VM_TRACE_FST)
     trace->flush();
     trace->close();
 #endif

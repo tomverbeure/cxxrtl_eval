@@ -1,8 +1,25 @@
 
 
-SRC_FILE 			= ../spinal/ExampleTop.sim.v
-VERILATOR_PREFIX	= /opt/verilator/
-CXX			= clang++
+SRC_FILES 			= tb.v ../spinal/ExampleTop.sim.v main.cpp
+
+#VERILATOR_PREFIX	= /opt/verilator/
+VERILATOR_PREFIX	= /usr/
+
+# output directory
+VERILATOR_OPTIONS 	+= --Mdir obj_dir
+# generate c++ code
+VERILATOR_OPTIONS 	+= --cc
+# Don't bail on some Verilog warnings
+VERILATOR_OPTIONS 	+= -Wno-fatal
+# Create Makefile to generate executable (instead of an archive)
+VERILATOR_OPTIONS 	+= --exe
+# Kick off build automatically after Verilog code has been converted
+VERILATOR_OPTIONS 	+= --build
+
+#CFLAGS 				= -CFLAGS "-g -O3"
+
+
+CXX					= clang++
 
 all: tb_vcd tb_fst
 
@@ -11,16 +28,11 @@ all: tb_vcd tb_fst
 #============================================================
 
 tb: verilator
-	$(CXX) -std=c++14 -g -O3 -I$(VERILATOR_PREFIX)/share/verilator/include/ -I$(VERILATOR_PREFIX)/share/verilator/include/vltstd -Iobj_dir \
-	     main.cpp \
-	    $(VERILATOR_PREFIX)/share/verilator/include/verilated.cpp \
-	    ./obj_dir/Vtb__ALL.a -o tb
 
 .PHONY: verilator
 verilator: 
 	rm -fr obj_dir
-	verilator -CFLAGS "-g -O3" --Mdir obj_dir -Wno-fatal -cc tb.v $(SRC_FILE)
-	cd obj_dir && make -f Vtb.mk
+	verilator $(CFLAGS) $(VERILATOR_OPTIONS) --Mdir obj_dir $(SRC_FILES) 
 	cp ../spinal/*.bin .
 
 #============================================================
@@ -28,17 +40,11 @@ verilator:
 #============================================================
 
 tb_vcd: verilator_vcd
-	$(CXX) -std=c++14 -g -O3 -DTRACE_VCD -I$(VERILATOR_PREFIX)/share/verilator/include/ -I$(VERILATOR_PREFIX)/share/verilator/include/vltstd -Iobj_dir_vcd \
-	     main.cpp \
-	    $(VERILATOR_PREFIX)/share/verilator/include/verilated.cpp \
-	    $(VERILATOR_PREFIX)/share/verilator/include/verilated_vcd_c.cpp \
-	    ./obj_dir_vcd/Vtb__ALL.a -o tb_vcd
 
 .PHONY: verilator_vcd
 verilator_vcd: 
 	rm -fr obj_dir_vcd
-	verilator -CFLAGS "-g -O3" --trace --Mdir obj_dir_vcd -Wno-fatal -cc tb.v $(SRC_FILE)
-	cd obj_dir_vcd && make -f Vtb.mk
+	verilator $(CFLAGS) $(VERILATOR_OPTIONS) --trace --Mdir obj_dir_vcd $(SRC_FILES) 
 	cp ../spinal/*.bin .
 
 #============================================================
@@ -46,17 +52,11 @@ verilator_vcd:
 #============================================================
 
 tb_fst: verilator_fst
-	$(CXX) -std=c++14 -g -O3 -DTRACE_FST -I$(VERILATOR_PREFIX)/share/verilator/include/ -I$(VERILATOR_PREFIX)/share/verilator/include/vltstd -Iobj_dir_fst \
-	     main.cpp \
-	    $(VERILATOR_PREFIX)/share/verilator/include/verilated.cpp \
-	    $(VERILATOR_PREFIX)/share/verilator/include/verilated_fst_c.cpp \
-	    ./obj_dir_fst/Vtb__ALL.a -lz -o tb_fst
 
 .PHONY: verilator_fst
 verilator_fst: 
 	rm -fr obj_dir_fst
-	verilator -CFLAGS "-g -O3" --trace-fst --Mdir obj_dir_fst -Wno-fatal -cc tb.v $(SRC_FILE)
-	cd obj_dir_fst && make -f Vtb.mk
+	verilator $(CFLAGS) $(VERILATOR_OPTIONS) --trace-fst --Mdir obj_dir_fst $(SRC_FILES) 
 	cp ../spinal/*.bin .
 
 clean:
