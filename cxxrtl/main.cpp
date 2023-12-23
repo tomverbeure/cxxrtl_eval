@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iomanip>
 
-#include <backends/cxxrtl/cxxrtl_vcd.h>
+#include <cxxrtl/cxxrtl_vcd.h>
 
 #include <cxxrtl_lib.h>
 

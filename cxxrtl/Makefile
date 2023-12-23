@@ -1,7 +1,7 @@
 
 
 YOSYS			= yosys
-YOSYS_INCLUDE	= $(shell yosys-config --datdir)/include
+YOSYS_INCLUDE	= $(shell yosys-config --datdir)/include/backends/cxxrtl/runtime
 
 SRC				= main.cpp
 OBJ 			= cxxrtl_lib.o
@@ -12,7 +12,8 @@ MEM_FILES		= ../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol0.bin
 					../spinal/ExampleTop.v_toplevel_cpu_u_cpu_u_cpu_ram_ram_symbol3.bin
 
 CLANG6			= clang++-6.0
-CLANG9			= clang++-9
+#CLANG9			= clang++-9
+CLANG9			= clang++
 GCC7			= g++
 GCC10			= g++-10
 

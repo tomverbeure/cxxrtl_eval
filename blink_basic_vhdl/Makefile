@@ -1,6 +1,6 @@
 
 YOSYS			= yosys
-YOSYS_INCLUDE	= $(shell yosys-config --datdir)/include
+YOSYS_INCLUDE	= $(shell yosys-config --datdir)/include/backends/cxxrtl/runtime
 GHDL 			= /opt/ghdl/bin/ghdl
 
 all: tb

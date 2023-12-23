@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 
-#include <backends/cxxrtl/cxxrtl_vcd.h>
+#include <cxxrtl/cxxrtl_vcd.h>
 
 #include "blink.cpp"
 
