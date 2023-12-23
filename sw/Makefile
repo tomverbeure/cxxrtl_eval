@@ -2,14 +2,14 @@
 MEM_WORDS		= 2048
 MEM_BYTES 		= 8192
 
-MARCH 			= rv32im
+MARCH 			= rv32im_zicsr
 CPU_FREQ_MHZ	= 50
 CC_OPT 			= -Os
 
 OBJ_FILES       = start.o main.o uart.o lib.o timer.o 
 
-##TOOLS_PREFIX    = /opt/riscv32i/bin
-TOOLS_PREFIX    = /opt/riscv32im/bin
+TOOLS_PREFIX    = /opt/riscv32i/bin
+##TOOLS_PREFIX    = /opt/riscv32im/bin
 TARGET          = $(TOOLS_PREFIX)/riscv32-unknown-elf
 AS              = $(TARGET)-as
 ASFLAGS         = -march=$(MARCH) -mabi=ilp32
