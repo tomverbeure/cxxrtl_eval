@@ -17,7 +17,7 @@ int main()
     cxxrtl::debug_items all_debug_items;
 
     // Load the debug items of the top down the whole design hierarchy
-    top.debug_info(all_debug_items);
+    top.debug_info(&all_debug_items, nullptr, "");
 
     // vcd_writer is the CXXRTL object that's responsible of creating a string with
     // the VCD file contents.

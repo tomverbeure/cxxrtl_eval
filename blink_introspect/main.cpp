@@ -25,7 +25,7 @@ void dump_all_items(cxxrtl::debug_items &items)
 
 void dump_item_value(cxxrtl::debug_items &items, std::string path)
 {
-    cxxrtl::debug_item item = items.at(path);
+    cxxrtl::debug_item item = items.at(path)[0];
 
     // Number of chunks per value
     const size_t nr_chunks = (item.width + (sizeof(chunk_t) * 8 - 1)) / (sizeof(chunk_t) * 8);
@@ -49,7 +49,7 @@ int main()
 
     cxxrtl::debug_items all_debug_items;
 
-    top.debug_info(all_debug_items);
+    top.debug_info(&all_debug_items, nullptr, "");
 
     dump_all_items(all_debug_items);
 
