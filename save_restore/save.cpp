@@ -15,7 +15,7 @@ int main()
 
     cxxrtl::debug_items all_debug_items;
 
-    top.debug_info(all_debug_items);
+    top.debug_info(&all_debug_items, nullptr, "");
 
     // Print all the introspectable information of all debug items
     for(auto &it : all_debug_items.table)

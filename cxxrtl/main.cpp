@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 
     cxxrtl_design::p_ExampleTop top;
     cxxrtl::debug_items all_debug_items;
-    top.debug_info(all_debug_items);
+    top.debug_info(&all_debug_items, nullptr, "");
     cxxrtl::vcd_writer vcd;
     std::ofstream waves;
 
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
         else if (dump_level == 2)
             vcd.add_without_memories(all_debug_items);
         else if (dump_level == 3)
-		    vcd.template add(all_debug_items, [](const std::string &, const debug_item &item) {
+		    vcd.add(all_debug_items, [](const std::string &, const debug_item &item) {
 			    return item.type == debug_item::WIRE;
 		    });
         waves.open(filename);
@@ -68,11 +68,11 @@ int main(int argc, char **argv)
     if (dump_level >=1 && dump_level <= 3)
         vcd.sample(0);
 
-    cxxrtl::debug_item psel    = all_debug_items.at("cpu_u_cpu u_uart io_apb_PSEL");
-    cxxrtl::debug_item penable = all_debug_items.at("cpu_u_cpu u_uart io_apb_PENABLE");
-    cxxrtl::debug_item pwrite  = all_debug_items.at("cpu_u_cpu u_uart io_apb_PWRITE");
-    cxxrtl::debug_item pwdata  = all_debug_items.at("cpu_u_cpu u_uart io_apb_PWDATA");
-    cxxrtl::debug_item paddr   = all_debug_items.at("cpu_u_cpu u_uart io_apb_PADDR");
+    cxxrtl::debug_item psel    = all_debug_items.at("cpu_u_cpu u_uart io_apb_PSEL")[0];
+    cxxrtl::debug_item penable = all_debug_items.at("cpu_u_cpu u_uart io_apb_PENABLE")[0];
+    cxxrtl::debug_item pwrite  = all_debug_items.at("cpu_u_cpu u_uart io_apb_PWRITE")[0];
+    cxxrtl::debug_item pwdata  = all_debug_items.at("cpu_u_cpu u_uart io_apb_PWDATA")[0];
+    cxxrtl::debug_item paddr   = all_debug_items.at("cpu_u_cpu u_uart io_apb_PADDR")[0];
 
     int led_red_cntr = 0;
 

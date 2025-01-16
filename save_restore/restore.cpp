@@ -16,7 +16,7 @@ int main()
 
     cxxrtl::debug_items all_debug_items;
 
-    top.debug_info(all_debug_items);
+    top.debug_info(&all_debug_items, nullptr, "");
 
     cout << "Restoring from checkpoint..." << endl;
     std::ifstream checkpoint("checkpoint.val");
